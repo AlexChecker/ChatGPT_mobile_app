@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/GPTInput"
+        android:hint="Задайте вопрос!"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_marginRight="50dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+        android:onClick="sendMessage"
+        android:src="@drawable/message_send"
+        android:background="#0fff"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/GPTInput" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/message_scroller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/GPTInput" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
