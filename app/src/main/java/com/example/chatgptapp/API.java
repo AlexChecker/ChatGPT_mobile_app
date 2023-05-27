@@ -11,7 +11,7 @@ import retrofit2.http.POST;
 
 public interface API {
     @POST("/v1/chat/completions")
-    @Headers({"Content-Type: application/json","Authorization: Bearer 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"})
+    @Headers({"Content-Type: application/json","Authorization: Bearer INSERT YOUR OPENAI KEY HERE"})
     Call<GPTResponse> sendMessage(@Body GPTRequest body);
 
 
