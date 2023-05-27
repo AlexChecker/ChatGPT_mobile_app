@@ -15,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import io.noties.markwon.Markwon;
 
 public class GPTAdapter extends RecyclerView.Adapter<GPTAdapter.ViewHolder> {
 
@@ -56,13 +59,16 @@ public class GPTAdapter extends RecyclerView.Adapter<GPTAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull GPTAdapter.ViewHolder holder, int position) {
-        if(messages.get(position).getRole()=="user")
+        if(Objects.equals(messages.get(position).getRole(), "user"))
         {
             holder.getUser_pic().setImageResource(R.drawable.baseline_account_circle_24);
             //holder.getUser_pic().setImageDrawable(ResourcesCompat.getDrawable(Resources.getSystem(),R.drawable.baseline_account_circle_24,null));
         }
         else holder.getUser_pic().setImageResource(R.mipmap.appicon); //holder.getUser_pic().setImageDrawable(ResourcesCompat.getDrawable(Resources.getSystem(),R.mipmap.appicon,null));
-        holder.getUser_text().setText(messages.get(position).getContent());
+        final Markwon md = Markwon.create(holder.getUser_text().getContext());
+        md.setMarkdown(holder.getUser_text(),messages.get(position).getContent());
+
+        //holder.getUser_text().setText(messages.get(position).getContent());
     }
 
     @Override

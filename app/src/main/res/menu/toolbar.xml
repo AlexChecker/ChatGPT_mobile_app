@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/save"
+        android:icon="@drawable/baseline_save_24"
+        android:title="Сохранить"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/load"
+        android:icon="@drawable/baseline_load_24"
+        android:title="Загрузить"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/newDialog"
+        android:icon="@drawable/baseline_fiber_new_24"
+        android:title="Новый чат"
+        app:showAsAction="ifRoom"
+        />
+</menu>
